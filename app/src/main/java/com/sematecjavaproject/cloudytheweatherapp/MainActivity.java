@@ -82,30 +82,30 @@ public class MainActivity extends AppCompatActivity {
 
                 WeatherClass weatherClass = gson.fromJson(response.toString(), WeatherClass.class);
 
-                try {
-                    JSONObject jsonObject = new JSONObject(response.toString());
-                    String weatherData = jsonObject.getString("weather");
-                    JSONArray jsonArray = new JSONArray(weatherData);
-
-                    weatherType = "";
-                    weatherDescription = "";
-                    weatherIcon = "";
-                    iconUrl = null;
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject weatherPart = jsonArray.getJSONObject(i);
-                        weatherType = weatherPart.getString("main");
-                        weatherDescription = weatherPart.getString("description");
-                        weatherIcon = weatherPart.getString("icon");
-                    }
-
-                    txtWeatherType.setText(weatherType);
-                    txtWeatherDescription.setText(weatherDescription);
-                    iconUrl = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
-                    Picasso.get().load(iconUrl).into(imgWeatherIcon);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response.toString());
+//                    String weatherData = jsonObject.getString("weather");
+//                    JSONArray jsonArray = new JSONArray(weatherData);
+//
+//                    weatherType = "";
+//                    weatherDescription = "";
+//                    weatherIcon = "";
+//                    iconUrl = null;
+//
+//                    for (int i = 0; i < jsonArray.length(); i++) {
+//                        JSONObject weatherPart = jsonArray.getJSONObject(i);
+//                        weatherType = weatherPart.getString("main");
+//                        weatherDescription = weatherPart.getString("description");
+//                        weatherIcon = weatherPart.getString("icon");
+//                    }
+//
+//                    txtWeatherType.setText(weatherType);
+//                    txtWeatherDescription.setText(weatherDescription);
+//                    iconUrl = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
+//                    Picasso.get().load(iconUrl).into(imgWeatherIcon);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
 
 
                 city = weatherClass.getName();
