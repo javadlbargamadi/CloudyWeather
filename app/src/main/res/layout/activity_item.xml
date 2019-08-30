@@ -16,7 +16,6 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_marginBottom="3dp"
             android:textColor="#fff"
             android:textStyle="bold"
             android:layout_weight="14"
@@ -25,15 +24,7 @@
             android:gravity="center"
             android:id="@+id/txtTest"
             android:text="Swipe Left for 7Days Forecast"
-            android:layout_width="0dp"
-            android:layout_height="50dp"/>
-
-        <ImageView
-            android:background="#fff"
-            android:layout_weight="1"
-            android:src="@drawable/arrowicon"
-            android:layout_gravity="center"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"/>
     </LinearLayout>
 

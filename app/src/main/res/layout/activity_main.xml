@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:scaleType="centerCrop"
-            android:src="@drawable/welcomepage2" />
+            android:src="@drawable/backgrnd" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,10 +25,13 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_margin="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:cardBackgroundColor="#fff"
+                app:cardBackgroundColor="#00FFFFFF"
                 app:cardCornerRadius="25dp">
 
                 <LinearLayout
@@ -38,7 +41,7 @@
 
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:orientation="horizontal"
                         android:weightSum="10">
 
@@ -48,7 +51,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
                             android:layout_weight="5"
-                            app:cardBackgroundColor="#ff5722"
+                            app:cardBackgroundColor="#fff"
                             app:cardCornerRadius="25dp">
 
                             <TextView
@@ -57,7 +60,7 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="Today"
-                                android:textColor="#fff"
+                                android:textColor="#000"
                                 android:textSize="20sp" />
                         </androidx.cardview.widget.CardView>
 
@@ -68,10 +71,11 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_weight="5"
-                            app:cardBackgroundColor="#ff5722"
+                            app:cardBackgroundColor="#fff"
                             app:cardCornerRadius="25dp">
 
                             <TextView
+                                android:textStyle="bold"
                                 android:id="@+id/txtCity"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -79,7 +83,7 @@
                                 android:gravity="center"
                                 android:text=""
                                 android:textAllCaps="true"
-                                android:textColor="#fff"
+                                android:textColor="#ff5722"
                                 android:textSize="20sp" />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
@@ -87,7 +91,7 @@
 
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
                         android:orientation="horizontal"
@@ -106,10 +110,11 @@
                                 android:layout_height="0dp"
                                 android:layout_marginLeft="5dp"
                                 android:layout_weight="2"
-                                app:cardBackgroundColor="#bdbdbd"
-                                app:cardCornerRadius="20dp">
+                                app:cardBackgroundColor="#fff"
+                                app:cardCornerRadius="25dp">
 
                                 <TextView
+                                    android:textStyle="bold"
                                     android:id="@+id/txtWeatherType"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -127,10 +132,11 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
                                 android:layout_weight="2"
-                                app:cardBackgroundColor="#bdbdbd"
-                                app:cardCornerRadius="20dp">
+                                app:cardBackgroundColor="#fff"
+                                app:cardCornerRadius="25dp">
 
                                 <TextView
+                                    android:textStyle="bold"
                                     android:id="@+id/txtWeatherDescription"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -157,6 +163,7 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:layout_weight="2"
+                                app:cardBackgroundColor="#00FFFFFF"
                                 app:cardElevation="999dp"
                                 app:cardCornerRadius="20dp">
 
@@ -164,7 +171,7 @@
                                     android:layout_gravity="center"
                                     android:id="@+id/imgWeatherIcon"
                                     android:layout_width="120dp"
-                                    android:layout_height="120dp"
+                                    android:layout_height="60dp"
                                     android:gravity="center"
                                     android:scaleType="centerCrop"/>
                             </androidx.cardview.widget.CardView>
@@ -177,10 +184,11 @@
                                 android:layout_marginRight="5dp"
                                 android:layout_marginBottom="5dp"
                                 android:layout_weight="2"
-                                app:cardBackgroundColor="#bdbdbd"
-                                app:cardCornerRadius="20dp">
+                                app:cardBackgroundColor="#fff"
+                                app:cardCornerRadius="25dp">
 
                                 <TextView
+                                    android:textStyle="bold"
                                     android:id="@+id/txtMainTemp"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -198,7 +206,7 @@
 
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:orientation="horizontal"
                         android:weightSum="10">
 
@@ -208,17 +216,18 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
                             android:layout_weight="5"
-                            app:cardBackgroundColor="#2196f3"
+                            app:cardBackgroundColor="#fff"
                             app:cardCornerRadius="25dp">
 
                             <TextView
+                                android:textStyle="bold"
                                 android:id="@+id/txtMinTemp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text=""
-                                android:textColor="#fff"
+                                android:textColor="#2196f3"
                                 android:textSize="20sp" />
                         </androidx.cardview.widget.CardView>
 
@@ -229,17 +238,18 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="5dp"
                             android:layout_weight="5"
-                            app:cardBackgroundColor="#f44336"
+                            app:cardBackgroundColor="#fff"
                             app:cardCornerRadius="25dp">
 
                             <TextView
+                                android:textStyle="bold"
                                 android:id="@+id/txtMaxTemp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text=""
-                                android:textColor="#fff"
+                                android:textColor="#f44336"
                                 android:textSize="20sp" />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
@@ -247,7 +257,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="center"
@@ -256,7 +266,6 @@
                         <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="1dp"
                             android:orientation="horizontal"
                             android:weightSum="10">
 
@@ -266,7 +275,7 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_weight="5"
-                                app:cardBackgroundColor="#bdbdbd"
+                                app:cardBackgroundColor="#fff"
                                 app:cardCornerRadius="25dp">
 
                                 <TextView
@@ -286,10 +295,11 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginRight="5dp"
                                 android:layout_weight="5"
-                                app:cardBackgroundColor="#bdbdbd"
+                                app:cardBackgroundColor="#fff"
                                 app:cardCornerRadius="25dp">
 
                                 <TextView
+                                    android:textStyle="bold"
                                     android:id="@+id/txtWindSpeed"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -297,7 +307,7 @@
                                     android:gravity="center"
                                     android:text=""
                                     android:textAllCaps="true"
-                                    android:textColor="#000"
+                                    android:textColor="#4CAF50"
                                     android:textSize="20sp" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
@@ -305,6 +315,7 @@
                     </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/OtherDaysRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
