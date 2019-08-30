@@ -5,19 +5,23 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 
 import com.sematecjavaproject.cloudytheweatherapp.OpenWeatherClass.OpenWeatherClass;
+import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -75,30 +79,31 @@ public class MainActivity extends AppCompatActivity {
 
                 OpenWeatherClass openWeatherClass = gson.fromJson(response.toString(), OpenWeatherClass.class);
 
-//                try {
-//                    JSONObject jsonObject = new JSONObject(response.toString());
-//                    String weatherData = jsonObject.getString("weather");
-//                    JSONArray jsonArray = new JSONArray(weatherData);
-//
-//                    weatherType = "";
-//                    weatherDescription = "";
-//                    weatherIcon = "";
-//                    iconUrl = null;
-//
-//                    for (int i = 0; i < jsonArray.length(); i++) {
-//                        JSONObject weatherPart = jsonArray.getJSONObject(i);
-//                        weatherType = weatherPart.getString("main");
-//                        weatherDescription = weatherPart.getString("description");
-//                        weatherIcon = weatherPart.getString("icon");
-//                    }
-//
-//                    txtWeatherType.setText(weatherType);
-//                    txtWeatherDescription.setText(weatherDescription);
-//                    iconUrl = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
-//                    Picasso.get().load(iconUrl).into(imgWeatherIcon);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    JSONObject jsonObject = new JSONObject(response.toString());
+                    String weatherData = jsonObject.getString("weather");
+                    JSONArray jsonArray = new JSONArray(weatherData);
+
+                    weatherType = "";
+                    weatherDescription = "";
+                    weatherIcon = "";
+                    iconUrl = null;
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject weatherPart = jsonArray.getJSONObject(i);
+                        weatherType = weatherPart.getString("main");
+                        weatherDescription = weatherPart.getString("description");
+                        weatherIcon = weatherPart.getString("icon");
+                    }
+
+                    txtWeatherType.setText(weatherType);
+                    txtWeatherDescription.setText(weatherDescription);
+                    iconUrl = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
+                    Picasso.get().load(Uri.parse(iconUrl)).into(imgWeatherIcon);
+//                    Glide.with(MainActivity.this).load("url").into(imgWeatherIcon);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
 
                 city = openWeatherClass.getName();
