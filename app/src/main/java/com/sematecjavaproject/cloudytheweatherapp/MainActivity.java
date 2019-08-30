@@ -6,28 +6,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.sematecjavaproject.cloudytheweatherapp.WeatherClass.Weather;
-import com.sematecjavaproject.cloudytheweatherapp.WeatherClass.WeatherClass;
 
-import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
+import com.sematecjavaproject.cloudytheweatherapp.OpenWeatherClass.OpenWeatherClass;
+
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -38,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     String weatherType;
     String weatherDescription;
     String weatherIcon;
-    Double minTemp;
+    Integer minTemp;
     Integer maxTemp;
     Double mainTemp;
     Double windSpeed;
@@ -69,10 +61,11 @@ public class MainActivity extends AppCompatActivity {
         txtMainTemp = findViewById(R.id.txtMainTemp);
         txtWindSpeed = findViewById(R.id.txtWindSpeed);
 
-        url = "https://api.openweathermap.org/data/2.5/weather?q=Tehran&units=metric&APPID=dea09b8a846a368d220a00e9980102d2";
+        url = "https://api.openweathermap.org/data/2.5/weather?q=Tehran&units=metric&APPID=05c1d09d0ef22e9f6ddfbf67d8dcc151";
 
         AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
         asyncHttpClient.get(url, new JsonHttpResponseHandler() {
+
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -80,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Gson gson = new Gson();
 
-                WeatherClass weatherClass = gson.fromJson(response.toString(), WeatherClass.class);
+                OpenWeatherClass openWeatherClass = gson.fromJson(response.toString(), OpenWeatherClass.class);
 
 //                try {
 //                    JSONObject jsonObject = new JSONObject(response.toString());
@@ -108,19 +101,19 @@ public class MainActivity extends AppCompatActivity {
 //                }
 
 
-                city = weatherClass.getName();
+                city = openWeatherClass.getName();
                 txtCity.setText(city);
 
-                minTemp = weatherClass.getMain().getTempMin();
+                minTemp = openWeatherClass.getMain().getTempMin();
                 txtMinTemp.setText(minTemp.toString() + "°C");
 
-                maxTemp = weatherClass.getMain().getTempMax();
+                maxTemp = openWeatherClass.getMain().getTempMax();
                 txtMaxTemp.setText(maxTemp.toString() + "°C");
 
-                mainTemp = weatherClass.getMain().getTemp();
+                mainTemp = openWeatherClass.getMain().getTemp();
                 txtMainTemp.setText(mainTemp.toString() + "°C");
 
-                windSpeed = weatherClass.getWind().getSpeed();
+                windSpeed = openWeatherClass.getWind().getSpeed();
                 txtWindSpeed.setText(windSpeed.toString() + "m/s");
 
 

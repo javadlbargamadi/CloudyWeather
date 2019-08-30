@@ -1,5 +1,5 @@
 
-package com.sematecjavaproject.cloudytheweatherapp.WeatherClass;
+package com.sematecjavaproject.cloudytheweatherapp.OpenWeatherClass;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

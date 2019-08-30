@@ -1,5 +1,5 @@
 
-package com.sematecjavaproject.cloudytheweatherapp.WeatherClass;
+package com.sematecjavaproject.cloudytheweatherapp.OpenWeatherClass;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -17,7 +17,7 @@ public class Main {
     private Integer humidity;
     @SerializedName("temp_min")
     @Expose
-    private Double tempMin;
+    private Integer tempMin;
     @SerializedName("temp_max")
     @Expose
     private Integer tempMax;
@@ -46,11 +46,11 @@ public class Main {
         this.humidity = humidity;
     }
 
-    public Double getTempMin() {
+    public Integer getTempMin() {
         return tempMin;
     }
 
-    public void setTempMin(Double tempMin) {
+    public void setTempMin(Integer tempMin) {
         this.tempMin = tempMin;
     }
 

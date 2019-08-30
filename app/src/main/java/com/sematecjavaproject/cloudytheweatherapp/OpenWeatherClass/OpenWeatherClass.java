@@ -1,12 +1,11 @@
 
-package com.sematecjavaproject.cloudytheweatherapp.WeatherClass;
+package com.sematecjavaproject.cloudytheweatherapp.OpenWeatherClass;
 
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class WeatherClass {
+public class OpenWeatherClass {
 
     @SerializedName("coord")
     @Expose
