@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                     weatherType = "";
                     weatherDescription = "";
-                    weatherIcon = "";
+                    weatherIcon = null;
                     iconUrl = null;
 
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                         weatherType = weatherPart.getString("main");
                         weatherDescription = weatherPart.getString("description");
                         weatherIcon = weatherPart.getString("icon");
+                        String wIcon = weatherIcon;
                     }
 
                     txtWeatherType.setText(weatherType);
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
 
 
                 city = openWeatherClass.getName();
