@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:scaleType="centerCrop"
-            android:src="@drawable/blurgradient" />
+            android:src="@drawable/welcomepage2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,11 +25,10 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:layout_margin="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                app:cardBackgroundColor="#00FFFFFF"
-                app:cardElevation="9999dp"
+                app:cardBackgroundColor="#fff"
                 app:cardCornerRadius="25dp">
 
                 <LinearLayout
@@ -158,15 +157,16 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:layout_weight="2"
-                                app:cardBackgroundColor="#bdbdbd"
+                                app:cardElevation="999dp"
                                 app:cardCornerRadius="20dp">
 
                                 <ImageView
+                                    android:layout_gravity="center"
                                     android:id="@+id/imgWeatherIcon"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
                                     android:gravity="center"
-                                    android:scaleType="centerCrop" />
+                                    android:scaleType="centerCrop"/>
                             </androidx.cardview.widget.CardView>
 
                             <androidx.cardview.widget.CardView
